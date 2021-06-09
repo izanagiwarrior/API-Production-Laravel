@@ -22,17 +22,17 @@
                         <!-- input nama vendor -->
                         <div class="form-group mb-3">
                             <label for="exampleInputPassword1">Nama Vendor</label>
-                            <input type="text" class="form-control" name="nama_vendor" placeholder="input id request here">
+                            <input type="text" class="form-control" name="nama_vendor" placeholder="Nama Vendor . .">
                         </div>
                         <!-- input alamat vendor -->
                         <div class="form-group mb-3">
                             <label for="exampleInputPassword1">Alamat Vendor</label>
-                            <input type="text" class="form-control" name="alamat_vendor" placeholder="input id vendor here">
+                            <input type="text" class="form-control" name="alamat_vendor" placeholder="Alamat Vendor . .">
                         </div>
                         <!-- input jenis vendor -->
                         <div class="form-group mb-3">
                             <label for="exampleInputPassword1">Jenis Vendor</label>
-                            <input type="text" class="form-control" name="jenis_vendor" placeholder="input resi here">
+                            <input type="text" class="form-control" name="jenis_vendor" placeholder="Jenis Vendor . .">
                         </div>
 
                         <div class="form-group text-center mt-4 d-grid">

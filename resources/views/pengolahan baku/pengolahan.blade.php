@@ -6,7 +6,7 @@
 <div class="row">
     <div class="col text-center">
         <h2 class="text-center text-white">Pengolahan Baku</h2>
-        <a href="{{route('createPengolahan')}}" class="btn btn-success">Create vendor</a>
+        <a href="{{route('createPengolahan')}}" class="btn btn-success">Create Pengolahan Baku</a>
         <a href="{{url('/')}}" class="btn btn-danger">Back to home</a>
     </div>
 </div>
@@ -20,7 +20,7 @@
                 <div class="card splide__slide" style="width:25rem; margin:0 5px;">
                     <div class="card-body">
                         <div class="d-flex justify-content-between">
-                            <p class="font-weight-bold">Nomor ID : {{$dt->id}}</p>
+                            <p class="font-weight-bold">Nomor ID Bahan Baku : {{$dt->id}}</p>
                         </div>
                         <div class="d-flex justify-content-between">
                             <p class="font-weight-bold">Nomor ID Vendor : {{$dt->id_vendor}}</p>
@@ -32,10 +32,13 @@
                         <p class="font-weight-bold">Nama Bahan Baku : {{$dt->nama_bahan_baku}}</p>
                         </div>
                         <div class="d-flex justify-content-between">
-                        <p class="font-weight-bold">Harga Bahan Baku : {{$dt->harga_bahan_baku}}</p>
+                        <p class="font-weight-bold">Harga Bahan Baku : Rp. {{number_format($dt->harga_bahan_baku,2,',','.')}}</p>
                         </div>
                         <div class="d-flex justify-content-between">
                         <p class="font-weight-bold">Jumlah Bahan Baku : {{$dt->jumlah_bahan_baku}}</p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                        <p class="font-weight-bold">Total : Rp. {{number_format($dt->harga_bahan_baku*$dt->jumlah_bahan_baku,2,',','.')}} </p>
                         </div>
                     </div>
 

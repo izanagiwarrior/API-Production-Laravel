@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\Vendor;
+use App\Models\Baku;
 use Illuminate\Http\Request;
 
 class orderController extends Controller
@@ -62,7 +64,9 @@ class orderController extends Controller
 
     public function createView()
     {
-        return view('order baku.create');
+        $vendor = Vendor::all();
+        $baku = Baku::all();
+        return view('order baku.create',compact('vendor','baku'));
     }
 
     public function createData(Request $request)
@@ -81,7 +85,9 @@ class orderController extends Controller
     public function updateView($id)
     {
         $data = Order::find($id);
-        return view("order baku.update", compact('data'));
+        $vendor = Vendor::all();
+        $baku = Baku::all();
+        return view("order baku.update", compact('data','vendor','baku'));
     }
 
     public function updateData(Request $request, $id)

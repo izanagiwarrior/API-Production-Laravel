@@ -22,7 +22,11 @@
                         <!-- input id vendor -->
                         <div class="form-group mb-3">
                             <label for="exampleInputPassword1">ID Request Order</label>
-                            <input type="number" class="form-control" id="exampleInputPassword1" name="id_request_order">
+                            <select name="id_request_order" id="" class="form-control">
+                                @foreach($order as $vd)
+                                <option value="{{$vd->id}}">{{$vd->id}}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <!-- input nomor resi -->
                         <div class="form-group mb-3">

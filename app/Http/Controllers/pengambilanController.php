@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Barang;
+use App\Models\Order;
 use Illuminate\Http\Request;
 
 class pengambilanController extends Controller
@@ -53,7 +54,8 @@ class pengambilanController extends Controller
 
     public function createView()
     {
-        return view('pengambilan barang.create');
+        $order = Order::all();
+        return view('pengambilan barang.create',compact('order'));
     }
 
     public function createData(Request $request)
@@ -68,8 +70,9 @@ class pengambilanController extends Controller
 
     public function updateView($id)
     {
+        $order = Order::all();
         $data = Barang::find($id);
-        return view("pengambilan barang.update", compact('data'));
+        return view("pengambilan barang.update", compact('data','order'));
     }
 
     public function updateData(Request $request, $id)

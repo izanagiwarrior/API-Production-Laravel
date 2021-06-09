@@ -6,7 +6,7 @@
 <div class="row">
     <div class="col text-center">
         <h2 class="text-center text-white">Anggaran Dana</h2>
-        <a href="{{url('/dana/create')}}" class="btn btn-success">Create vendor</a>
+        <a href="{{url('/dana/create')}}" class="btn btn-success">Create Anggaran</a>
         <a href="{{url('/')}}" class="btn btn-danger">Back to home</a>
     </div>
 </div>
@@ -20,7 +20,7 @@
                 <div class="card splide__slide" style="width:25rem; margin:0 5px;">
                     <div class="card-body">
                         <div class="d-flex justify-content-between">
-                            <p class="font-weight-bold">Nomor ID : {{$dt->id}}</p>
+                            <p class="font-weight-bold">Nomor ID Anggaran : {{$dt->id}}</p>
                         </div>
                         <div class="d-flex justify-content-between">
                             <p class="font-weight-bold">Nomor ID request order : {{$dt->id_request_order}}</p>

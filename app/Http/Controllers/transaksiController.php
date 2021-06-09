@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use App\Models\Transaksi;
+use App\Models\Vendor;
 use Illuminate\Http\Request;
 
 class transaksiController extends Controller
@@ -16,7 +18,11 @@ class transaksiController extends Controller
     {
         $transaksi = new Transaksi;
         $transaksi->id_request_order = $request->id_request_order;
-        $transaksi->tanggal_pengambilan_barang = $request->id_request_order;
+        $transaksi->id_vendor = $request->id_vendor;
+        $transaksi->nomor_resi = $request->nomor_resi;
+        $transaksi->nama_transaksi = $request->nama_transaksi;
+        $transaksi->tanggal_transaksi = $request->tanggal_transaksi;
+        $transaksi->total_harga = $request->total_harga;
         $transaksi->save();
         return "Transaksi berhasil dibuat";
     }
@@ -49,7 +55,9 @@ class transaksiController extends Controller
     }
 
     public function createView(){
-        return view('transaksi.create');
+        $order = Order::all();
+        $vendor = Vendor::all();
+        return view('transaksi.create',compact('order','vendor'));
     }
 
     public function createData(Request $request){
@@ -68,7 +76,9 @@ class transaksiController extends Controller
     public function updateView($id)
     {
         $data = Transaksi::find($id);
-        return view("transaksi.update", compact('data'));
+        $order = Order::all();
+        $vendor = Vendor::all();
+        return view("transaksi.update", compact('data','order','vendor'));
     }
 
     public function updateData(Request $request, $id)

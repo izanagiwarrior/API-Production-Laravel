@@ -15,15 +15,23 @@
     <div class="row">
         <div class="col">
             <div class="card mx-auto" style="width: 30rem;">
-                <h2 class="card-title text-center my-3">Create Data</h2>
+                <h2 class="card-title text-center my-3">Update Data</h2>
                 <div class="card-body">
-                    <form action="{{url('/pengolahan-baku/update', $data->id)}}">
+                    <form action="{{route('updatePengolahan', $data->id)}}" method="post">
                         @csrf
                         @method('PUT')
                         <!-- input id vendor -->
                         <div class="form-group mb-3">
                             <label for="exampleInputPassword1">ID Vendor</label>
                             <input type="number" class="form-control" name="id_vendor" placeholder="enter here" value="{{$data->id_vendor}}">
+                            
+                            <!-- UPDATE DISINI -->
+                            
+                            <!-- <select name="id_vendor" id="" class="form-control">
+                                @foreach($vendor as $vd)
+                                <option value="{{$vd->id}}">{{$vd->id}}</option>
+                                @endforeach
+                            </select> -->
                         </div>
                         <!-- input nomor resi -->
                         <div class="form-group mb-3">
@@ -47,7 +55,7 @@
                         </div>
 
                         <div class="form-group text-center mt-4 d-grid">
-                            <button class="btn btn-block btn-success" type="submit">Create</button>
+                            <button class="btn btn-block btn-success" type="submit">Update</button>
                         </div>
                     </form>
                 </div>

@@ -15,7 +15,7 @@
     <div class="row">
         <div class="col">
             <div class="card mx-auto" style="width: 30rem;">
-                <h2 class="card-title text-center my-3">Create Data</h2>
+                <h2 class="card-title text-center my-3">Update Data</h2>
                 <div class="card-body">
                     <form action="{{url('order/update', $data->id)}}" method="post">
                         @csrf
@@ -24,11 +24,29 @@
                         <div class="form-group mb-3">
                             <label for="exampleInputPassword1">ID Vendor</label>
                             <input type="number" class="form-control" id="exampleInputPassword1" name="id_vendor" value="{{$data->id_vendor}}">
+
+                            <!-- BAIKIN IKU -->
+
+                            <!-- <select name="id_vendor" id="" class="form-control">
+                                @foreach($vendor as $vd)
+                                <option value="{{$vd->id}}">{{$vd->id}}</option>
+                                @endforeach
+                            </select> -->
+
                         </div>
                         <!-- input nomor resi -->
                         <div class="form-group mb-3">
                             <label for="exampleInputPassword1">ID Bahan Baku</label>
                             <input type="text" class="form-control" id="exampleInputPassword1" name="id_bahan_baku" value="{{$data->id_bahan_baku}}">
+                        
+                            <!-- BAIKIN IKU -->
+
+                            <!-- <select name="id_bahan_baku" id="" class="form-control">
+                                @foreach($baku as $vd)
+                                <option value="{{$vd->id}}">{{$vd->id}}</option>
+                                @endforeach
+                            </select> -->
+                        
                         </div>
                         <!-- input nomor transaksi -->
                         <div class="form-group mb-3">
@@ -48,7 +66,7 @@
 
 
                         <div class="form-group text-center mt-4 d-grid">
-                            <button class="btn btn-block btn-success" type="submit">Create</button>
+                            <button class="btn btn-block btn-success" type="submit">Update</button>
                         </div>
                     </form>
                 </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Dana;
+use App\Models\Order;
 use Illuminate\Http\Request;
 
 class danaController extends Controller
@@ -52,7 +53,8 @@ class danaController extends Controller
 
     public function createView()
     {
-        return view('anggaran dana.create');
+        $order = Order::all();
+        return view('anggaran dana.create',compact('order'));
     }
 
     public function createData(Request $request)
@@ -68,7 +70,8 @@ class danaController extends Controller
     public function updateView($id)
     {
         $data = Dana::find($id);
-        return view("anggaran dana.update", compact('data'));
+        $order = Order::all();
+        return view("anggaran dana.update", compact('data','order'));
     }
 
     public function updateData(Request $request, $id)

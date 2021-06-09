@@ -20,7 +20,7 @@
                 <div class="card splide__slide" style="width:25rem; margin:0 5px;">
                     <div class="card-body">
                         <div class="d-flex justify-content-between">
-                            <p class="font-weight-bold">Nomor ID : {{$dt->id}}</p>
+                            <p class="font-weight-bold">ID Transaksi : {{$dt->id}}</p>
                         </div>
                         <div class="d-flex justify-content-between">
                             <p class="font-weight-bold">ID Request Order : {{$dt->id_request_order}}</p>

@@ -17,12 +17,16 @@
             <div class="card mx-auto" style="width: 30rem;">
                 <h2 class="card-title text-center my-3">Create Data</h2>
                 <div class="card-body">
-                <form action="{{route('createPengambilan')}}" method="POST">
-                    @csrf
+                    <form action="{{route('createPengambilan')}}" method="POST">
+                        @csrf
                         <!-- input id request order -->
                         <div class="form-group mb-3">
                             <label for="exampleInputPassword1">ID Request Order</label>
-                            <input type="number" class="form-control" name="id_request_order" placeholder="enter here">
+                            <select name="id_request_order" id="" class="form-control">
+                                @foreach($order as $vd)
+                                <option value="{{$vd->id}}">{{$vd->id}}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <!-- input tanggal pengambilan barang -->
                         <div class="form-group mb-3">

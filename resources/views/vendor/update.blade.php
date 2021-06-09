@@ -15,9 +15,11 @@
     <div class="row">
         <div class="col">
             <div class="card mx-auto" style="width: 30rem;">
-                <h2 class="card-title text-center my-3">Create Data</h2>
+                <h2 class="card-title text-center my-3">Update Vendor</h2>
                 <div class="card-body">
-                    <form action="" method="post">
+                    <form action="{{route('updateVendor',$data->id)}}" method="post">
+                        @csrf
+                        @method('put')
                         <!-- input nama vendor -->
                         <div class="form-group mb-3">
                             <label for="exampleInputPassword1">Nama Vendor</label>

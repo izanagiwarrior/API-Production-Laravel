@@ -18,31 +18,39 @@
                 <h2 class="card-title text-center my-3">Create Data</h2>
                 <div class="card-body">
                     <form action="{{route('createOrder')}}" method="POST">
-                    @csrf
+                        @csrf
                         <!-- input id vendor -->
                         <div class="form-group mb-3">
                             <label for="exampleInputPassword1">ID Vendor</label>
-                            <input type="number" class="form-control" id="exampleInputPassword1" name="id_vendor">
+                            <select name="id_vendor" id="" class="form-control">
+                                @foreach($vendor as $vd)
+                                <option value="{{$vd->id}}">{{$vd->id}}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <!-- input nomor resi -->
                         <div class="form-group mb-3">
                             <label for="exampleInputPassword1">ID Bahan Baku</label>
-                            <input type="text" class="form-control" id="exampleInputPassword1" name="id_bahan_baku">
+                            <select name="id_bahan_baku" id="" class="form-control">
+                                @foreach($baku as $vd)
+                                <option value="{{$vd->id}}">{{$vd->id}}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <!-- input nomor transaksi -->
                         <div class="form-group mb-3">
                             <label for="exampleInputPassword1">Nama Request</label>
-                            <input type="text" class="form-control" id="exampleInputPassword1" name="nama_request">
+                            <input type="text" class="form-control" id="exampleInputPassword1" name="nama_request" placeholder="Nama Request . .">
                         </div>
                         <!-- input tanggal transaksi -->
                         <div class="form-group mb-3">
                             <label for="exampleInputPassword1">Jumlah Bahan Baku</label>
-                            <input type="number" class="form-control" id="exampleInputPassword1" name="jumlah_bahan_baku">
+                            <input type="number" class="form-control" id="exampleInputPassword1" name="jumlah_bahan_baku" placeholder="Jumlah Bahan Baku . .">
                         </div>
                         <!-- input total harga -->
                         <div class="form-group mb-3">
                             <label for="exampleInputPassword1">Harga</label>
-                            <input type="number" class="form-control" id="exampleInputPassword1" name="harga">
+                            <input type="number" class="form-control" id="exampleInputPassword1" name="harga" placeholder="Harga . .">
                         </div>
 
                         <div class="form-group text-center mt-4 d-grid">

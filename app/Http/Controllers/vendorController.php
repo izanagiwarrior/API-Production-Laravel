@@ -79,6 +79,6 @@ class vendorController extends Controller
         $Vendor->jenis_vendor = $request->jenis_vendor;
         $Vendor->save();
 
-        return view(route('vendor'));
+        return redirect(route('vendor'));
     }
 }

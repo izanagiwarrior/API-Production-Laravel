@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Baku;
+use App\Models\Vendor;
 use Illuminate\Http\Request;
 
 class pengolahanController extends Controller
@@ -61,7 +62,9 @@ class pengolahanController extends Controller
 
     public function createView()
     {
-        return view('pengolahan baku.create');
+
+        $vendor = Vendor::all();
+        return view('pengolahan baku.create', compact('vendor'));
     }
 
     public function createData(Request $request)
@@ -80,7 +83,8 @@ class pengolahanController extends Controller
     public function updateView($id)
     {
         $data = Baku::find($id);
-        return view("pengolahan baku.update", compact('data'));
+        $vendor = Vendor::all();
+        return view("pengolahan baku.update", compact('data','vendor'));
     }
 
     public function updateData(Request $request, $id)

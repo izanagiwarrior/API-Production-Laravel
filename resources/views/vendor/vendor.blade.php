@@ -5,8 +5,8 @@
 @section('content')
 <div class="row">
     <div class="col text-center">
-        <h2 class="text-center text-white">vendor</h2>
-        <a href="{{url('vendor/create')}}" class="btn btn-success">Create vendor</a>
+        <h2 class="text-center text-white">Vendor</h2>
+        <a href="{{url('vendor/create')}}" class="btn btn-success">Update Vendor</a>
         <a href="{{url('/')}}" class="btn btn-danger">Back to home</a>
     </div>
 </div>
