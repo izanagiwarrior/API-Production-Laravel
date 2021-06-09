@@ -23,28 +23,20 @@
                         <!-- input id order -->
                         <div class="form-group mb-3">
                             <label for="exampleInputPassword1">ID Request Order</label>
-                            <input type="number" class="form-control" name="id_request_order" placeholder="Password" value="{{$data->id_request_order}}">
-
-                            <!-- UPDATE IKU -->
-
-                            <!-- <select name="id_request_order" id="" class="form-control">
-                                @foreach($order as $vd)
-                                <option value="{{$vd->id}}">{{$vd->id}}</option>
+                            <select name="id_request_order" id="" class="form-control">
+                                @foreach($order as $key => $value)
+                                <option value="{{$value->id}}" {{$value->id == $data->id_request_order ? 'selected' : '' }}>{{$value->id}}</option>
                                 @endforeach
-                            </select> -->
+                            </select>
                         </div>
                         <!-- input id vendor -->
                         <div class="form-group mb-3">
                             <label for="exampleInputPassword1">ID Vendor</label>
-                            <input type="number" class="form-control" name="id_vendor" placeholder="Password" value="{{$data->id_vendor}}">
-
-                            <!-- UPDATE IE -->
-
-                            <!-- <select name="id_vendor" id="" class="form-control">
-                                @foreach($vendor as $vd)
-                                <option value="{{$vd->id}}">{{$vd->id}}</option>
+                            <select name="id_vendor" id="" class="form-control">
+                                @foreach($vendor as $key => $value)
+                                <option value="{{$value->id}}" {{$value->id == $data->id_vendor ? 'selected' : '' }}>{{$value->id}}</option>
                                 @endforeach
-                            </select> -->
+                            </select>
                         </div>
                         <!-- input nomor resi -->
                         <div class="form-group mb-3">

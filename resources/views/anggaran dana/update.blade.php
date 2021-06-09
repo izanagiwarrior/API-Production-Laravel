@@ -23,15 +23,11 @@
                         <!-- input id vendor -->
                         <div class="form-group mb-3">
                             <label for="exampleInputPassword1">ID Request Order</label>
-                            <input type="number" class="form-control" id="exampleInputPassword1" name="id_request_order" value="{{$data->id_request_order}}">
-
-                                <!-- UPDATE DI DIE -->
-
-                            <!-- <select name="id_request_order" id="" class="form-control">
-                                @foreach($order as $vd)
-                                <option value="{{$vd->id}}">{{$vd->id}}</option>
+                            <select name="id_vendor" id="" class="form-control">
+                                @foreach($vendor as $key => $value)
+                                <option value="{{$value->id}}" {{$value->id == $data->id_vendor ? 'selected' : '' }}>{{$value->id}}</option>
                                 @endforeach
-                            </select> -->
+                            </select>
 
                         </div>
                         <!-- input nomor resi -->

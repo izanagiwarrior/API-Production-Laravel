@@ -23,29 +23,21 @@
                         <!-- input id order -->
                         <div class="form-group mb-3">
                             <label for="exampleInputPassword1">ID Vendor</label>
-                            <input type="number" class="form-control" id="exampleInputPassword1" name="id_vendor" value="{{$data->id_vendor}}">
-
-                            <!-- BAIKIN IKU -->
-
-                            <!-- <select name="id_vendor" id="" class="form-control">
-                                @foreach($vendor as $vd)
-                                <option value="{{$vd->id}}">{{$vd->id}}</option>
+                            <select name="id_vendor" id="" class="form-control">
+                                @foreach($vendor as $key => $value)
+                                <option value="{{$value->id}}" {{$value->id == $data->id_vendor ? 'selected' : '' }}>{{$value->id}}</option>
                                 @endforeach
-                            </select> -->
+                            </select>
 
                         </div>
                         <!-- input nomor resi -->
                         <div class="form-group mb-3">
                             <label for="exampleInputPassword1">ID Bahan Baku</label>
-                            <input type="text" class="form-control" id="exampleInputPassword1" name="id_bahan_baku" value="{{$data->id_bahan_baku}}">
-                        
-                            <!-- BAIKIN IKU -->
-
-                            <!-- <select name="id_bahan_baku" id="" class="form-control">
-                                @foreach($baku as $vd)
-                                <option value="{{$vd->id}}">{{$vd->id}}</option>
+                            <select name="id_bahan_baku" id="" class="form-control">
+                                @foreach($baku as $key => $value)
+                                <option value="{{$value->id}}" {{$value->id == $data->id_bahan_baku ? 'selected' : '' }}>{{$value->id}}</option>
                                 @endforeach
-                            </select> -->
+                            </select>
                         
                         </div>
                         <!-- input nomor transaksi -->
